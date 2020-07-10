@@ -32,8 +32,7 @@
             for (i = 0; i < rounds; i++) {
                 let playerSelection;
                 while (true) {
-                    playerSelection = prompt("Choose rock, paper, or scissors:");
-                    if (!playerSelection) { playerSelection = ""; }
+                    playerSelection = prompt("Choose rock, paper, or scissors:", "");
                     playerSelection = playerSelection.toLowerCase();
                     if (!["rock", "paper", "scissors"].includes(playerSelection)) {
                         console.log("Invalid selection. Choose rock, paper, or scissors.");
