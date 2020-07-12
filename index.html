@@ -5,62 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors!</title>
-    <script>
-        function computerPlay() {
-            let choices = ["rock", "paper", "scissors"];
-            return choices[Math.floor(Math.random() * 3)];
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            switch (playerSelection) {
-                case "rock":
-                    return (computerSelection == "paper") ? -1:
-                        (computerSelection == "rock") ? 0 : 1;
-                    break;
-                case "paper":
-                    return (computerSelection == "scissors") ? -1:
-                        (computerSelection == "paper") ? 0 : 1;
-                    break;
-                case "scissors":
-                    return (computerSelection == "rock") ? -1:
-                        (computerSelection == "scissors") ? 0 : 1;
-                    break;
-            }
-        }
-
-        function game(rounds) {
-            for (i = 0; i < rounds; i++) {
-                let playerSelection;
-                while (true) {
-                    playerSelection = prompt("Choose rock, paper, or scissors:", "");
-                    playerSelection = playerSelection.toLowerCase();
-                    if (!["rock", "paper", "scissors"].includes(playerSelection)) {
-                        console.log("Invalid selection. Choose rock, paper, or scissors.");
-                        continue;
-                    }
-                    break;
-                }
-                let computerSelection = computerPlay();
-                let gameOutcome = playRound(playerSelection, computerSelection);
-
-                switch(gameOutcome) {
-                    case -1:
-                        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
-                        break;
-                    case 0:
-                        console.log("It's a draw!");
-                        break;
-                    case 1:
-                        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
-                }
-            }
-        }
-
-        game(5);
-    </script>
+    <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
+    <div class="score computer">
+        <div class="scoreIcon"></div>
+        <div class="scoreIcon"></div>
+        <div class="scoreIcon"></div>
+        <div class="scoreIcon"></div>
+        <div class="scoreIcon"></div>
+    </div>
+    <div class="choiceIcon computerChoice">
+        <div id="placeholderIcon"></div>
+    </div>
+    <span class="roundResult">Make your move:</span>
+    <div class="playerChoices">
+        <button data-choice="rock" class="choice">
+            <img class="choiceIcon" src="images/rock.png">
+        </button>
+        <button data-choice="paper" class="choice">
+            <img class="choiceIcon" src="images/paper.png">
+        </button>
+        <button data-choice="scissors" class="choice">
+            <img class="choiceIcon" src="images/scissors.png">
+        </button>
+    </div>
+    <div class="score player">
+        <div class="scoreIcon"></div>
+        <div class="scoreIcon"></div>
+        <div class="scoreIcon"></div>
+        <div class="scoreIcon"></div>
+        <div class="scoreIcon"></div>
+    </div>
 </body>
+
+<script src="RPS.js"></script>
 
 </html>
