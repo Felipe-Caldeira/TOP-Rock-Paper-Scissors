@@ -1,6 +1,11 @@
 html {
+    font-family: 'Open Sans', sans-serif;
     font-size: 10px;
+    letter-spacing: 3px;
     background-color: lightcyan;
+    background: radial-gradient(circle,
+    white 0%,
+    rgb(108, 168, 168) 100%);
 
     width: 100vw;
     height: 100vh;
@@ -27,6 +32,7 @@ body {
     border-radius: 50%;
     margin-right: 1rem;
     background-color: rgb(222, 224, 224);
+    box-shadow: 3px 3px #888888;
 }
 
 .computerScoreIcon {
@@ -41,17 +47,17 @@ body {
 
 .computerChoice {
     background-color: lightcoral;
-    border-radius: 2rem;
+    border-radius: 15%;
     width: 15rem;
     max-width: 15rem;
     height: 15rem;
     flex: 1 1 auto;
     transform: rotate(180deg);
+    box-shadow: -5px -10px #888888;
 }
 
 .roundResult {
     font-size: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
@@ -69,7 +75,8 @@ button {
     margin-right: 3rem;
     transition: all .1s ease;
     background-color: lightskyblue;
-    border-radius: 2rem;
+    border-radius: 15%;
+    box-shadow: 5px 10px #888888;
 }
 
 button:hover {
